@@ -15,7 +15,7 @@ terraform workspace select $ENV || terraform workspace new $ENV
 
 # Run Terraform Plan
 echo "Running Terraform Plan for $ENV..."
-terraform plan -var-file="${ENV}.tfvars" -out=tfplan
+terraform plan -var-file="../env/${ENV}.tfvars" -out=tfplan
 
 # Prompt user for confirmation before applying
 read -p "Do you want to apply the changes? (yes/no): " CONFIRM
